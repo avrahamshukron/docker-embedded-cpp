@@ -1,7 +1,13 @@
 FROM ubuntu:18.04
 
+RUN apt-get clean -y
 RUN apt-get update -y
-RUN apt-get install -y clang make pkg-config libcpputest-dev
+RUN apt-get install -y git
+RUN apt-get install -y build-essential
+RUN apt-get install -y clang
+RUN apt-get install -y make
+RUN apt-get install -y pkg-config
+RUN apt-get install -y libcpputest-dev
 
 # Set clang as the default C/C++ compiler
 RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang 9999
